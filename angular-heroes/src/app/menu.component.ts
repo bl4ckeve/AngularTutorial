@@ -4,7 +4,7 @@ import {Component} from '@angular/core';
   selector: 'main-menu',
   template: `
     <ul>
-      <li *ngFor="let link of links"><a href="{{link.href}}">{{link.label}}</a></li>
+      <li *ngFor="let link of links"><a routerLink="{{link.href}}">{{link.label}}</a></li>
     </ul>
   `
 })

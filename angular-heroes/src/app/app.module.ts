@@ -10,7 +10,7 @@ import {RouterModule} from '@angular/router';
 import {MenuComponent} from './menu.component';
 
 @NgModule({
-  imports:      [
+  imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([

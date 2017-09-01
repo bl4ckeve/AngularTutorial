@@ -24,7 +24,7 @@ var MenuComponent = (function () {
 MenuComponent = __decorate([
     core_1.Component({
         selector: 'main-menu',
-        template: "\n    <ul>\n      <li *ngFor=\"let link of links\"><a href=\"{{link.href}}\">{{link.label}}</a></li>\n    </ul>\n  "
+        template: "\n    <ul>\n      <li *ngFor=\"let link of links\"><a routerLink=\"{{link.href}}\">{{link.label}}</a></li>\n    </ul>\n  "
     })
 ], MenuComponent);
 exports.MenuComponent = MenuComponent;
