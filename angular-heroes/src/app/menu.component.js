@@ -14,6 +14,10 @@ var MenuComponent = (function () {
                 label: 'Home'
             },
             {
+                href: '/dashboard',
+                label: 'Hero Dashboard'
+            },
+            {
                 href: '/heroes',
                 label: 'List Heroes'
             },

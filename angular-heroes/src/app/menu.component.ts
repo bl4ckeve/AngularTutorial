@@ -16,6 +16,10 @@ export class MenuComponent {
       label: 'Home'
     },
     {
+      href: '/dashboard',
+      label: 'Hero Dashboard'
+    },
+    {
       href: '/heroes',
       label: 'List Heroes'
     },

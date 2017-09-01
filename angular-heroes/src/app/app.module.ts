@@ -8,6 +8,7 @@ import {HeroesComponent} from './heroes.component';
 import {HeroService} from './hero.service';
 import {RouterModule} from '@angular/router';
 import {MenuComponent} from './menu.component';
+import {DashboardComponent} from './dashboard.component';
 
 @NgModule({
   imports: [
@@ -17,12 +18,22 @@ import {MenuComponent} from './menu.component';
       {
         path: 'heroes',
         component: HeroesComponent
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
       }
     ])
   ],
   declarations: [
     AppComponent,
     MenuComponent,
+    DashboardComponent,
     HeroesComponent,
     HeroDetailComponent
   ],
