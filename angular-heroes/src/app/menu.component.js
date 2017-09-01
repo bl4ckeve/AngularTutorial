@@ -6,17 +6,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Tour of Heroes';
+var MenuComponent = (function () {
+    function MenuComponent() {
+        this.links = [
+            {
+                href: '/',
+                label: 'Home'
+            },
+            {
+                href: '/heroes',
+                label: 'List Heroes'
+            },
+        ];
     }
-    return AppComponent;
+    return MenuComponent;
 }());
-AppComponent = __decorate([
+MenuComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n    <h1>{{title}}</h1>\n    <main-menu></main-menu>\n    <router-outlet></router-outlet>\n  ",
+        selector: 'main-menu',
+        template: "\n    <ul>\n      <li *ngFor=\"let link of links\"><a href=\"{{link.href}}\">{{link.label}}</a></li>\n    </ul>\n  "
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], MenuComponent);
+exports.MenuComponent = MenuComponent;
+//# sourceMappingURL=menu.component.js.map

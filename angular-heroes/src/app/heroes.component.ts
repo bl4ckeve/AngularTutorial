@@ -1,8 +1,8 @@
 
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit} from '@angular/core';
 
-import {Hero} from "./hero";
-import {HeroService} from "./hero.service";
+import {Hero} from './hero';
+import {HeroService} from './hero.service';
 
 
 @Component({
@@ -67,7 +67,6 @@ import {HeroService} from "./hero.service";
     </ul>
     <hero-detail [hero]="selectedHero"></hero-detail>
   `,
-  providers: [ HeroService ]
 })
 
 export class HeroesComponent implements OnInit {
