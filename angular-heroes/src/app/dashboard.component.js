@@ -19,7 +19,8 @@ var DashboardComponent = (function () {
     };
     DashboardComponent.prototype.getHeroes = function () {
         var _this = this;
-        this.heroService.getHeroes().then(function (d) { return _this.heroes = d.slice(1, 5); });
+        this.heroService.getHeroes()
+            .then(function (d) { return _this.heroes = d.slice(1, 5); });
     };
     return DashboardComponent;
 }());
