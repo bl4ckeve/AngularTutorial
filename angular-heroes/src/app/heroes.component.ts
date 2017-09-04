@@ -65,7 +65,10 @@ import {HeroService} from './hero.service';
         <span class="badge">{{hero.id}}</span> {{hero.name}}
       </li>
     </ul>
-    <hero-detail [hero]="selectedHero"></hero-detail>
+    <div *ngIf="selectedHero">
+      <h2>You selected {{selectedHero.name | uppercase}}.</h2>
+      <button (click)="goToDetail()">Details</button>
+    </div>
   `,
 })
 
@@ -89,4 +92,7 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   }
 
+  goToDetails(): void {
+    //stub
+  }
 }
