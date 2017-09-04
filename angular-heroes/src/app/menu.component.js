@@ -28,8 +28,8 @@ var MenuComponent = (function () {
 MenuComponent = __decorate([
     core_1.Component({
         selector: 'main-menu',
-        styles: ["\n    ul {\n      margin: 1em;\n      padding: 0;\n    }\n\n    li {\n      display: inline-block;\n      margin-right: 10px;\n    }\n\n    li a {\n      padding: 5px 10px;\n      text-decoration: none;\n      margin-top: 10px;\n      background-color: #eee;\n      border-radius: 4px;\n    }\n\n    li a:visited, a:link {\n      color: #607D8B;\n    }\n\n    li a:hover {\n      color: #039be5;\n      background-color: #CFD8DC;\n    }\n\n    li a.active {\n      color: #039be5;\n    }\n\n  "],
-        template: "\n    <ul>\n      <li *ngFor=\"let link of links\"><a routerLink=\"{{link.href}}\">{{link.label}}</a></li>\n    </ul>\n  "
+        styleUrls: ['./menu.component.css'],
+        template: "\n    <ul>\n      <li *ngFor=\"let link of links\">\n        <a routerLink=\"{{link.href}}\" routerLinkActive=\"active\">{{link.label}}</a>\n      </li>\n    </ul>\n  "
     })
 ], MenuComponent);
 exports.MenuComponent = MenuComponent;
