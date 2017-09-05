@@ -25,10 +25,14 @@ export class HeroService {
   }
 
   getHero(id: number): Promise<Hero> {
-    return this.getHeroes()
-      .then( heroes =>
-        heroes.find( hero => hero.id === id )
-      );
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => {
+        console.log(response);
+        return response.json().data as Hero;
+      })
+      .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {

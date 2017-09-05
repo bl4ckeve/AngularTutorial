@@ -3,7 +3,11 @@ import {HEROES} from './mock-heroes';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb(): {} {
-    const heroes = HEROES;
+    let heroes = HEROES;
+    heroes.unshift({
+      id: 0,
+      name: 'Zero'
+    });
     return {heroes};
   }
 }
