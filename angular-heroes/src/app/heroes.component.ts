@@ -36,4 +36,14 @@ export class HeroesComponent implements OnInit {
   goToDetail(): void {
     this.router.navigate([ '/heroes/detail', this.selectedHero.id ]);
   }
+
+  delete(hero: Hero): void {
+    this.heroService
+      .delete(hero.id)
+      .then( () => {
+        console.log('delete hero #' + hero.id);
+        this.heroes = this.heroes.filter( (h) => h !== hero );
+      } )
+      .catch((err) => console.warn('[add-hero] error deleting hero: ' + err));
+  }
 }

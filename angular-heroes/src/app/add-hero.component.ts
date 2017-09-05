@@ -16,9 +16,10 @@ export class AddHeroComponent {
 
   add(name: string): void {
     name = name.trim();
+    // check not empty
     if (!name) {
       return;
-    } // check not empty
+    }
     this.heroService.create(name)
       .then((hero) => {
         console.log(hero);

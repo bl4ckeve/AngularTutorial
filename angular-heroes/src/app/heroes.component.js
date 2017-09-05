@@ -29,6 +29,16 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.goToDetail = function () {
         this.router.navigate(['/heroes/detail', this.selectedHero.id]);
     };
+    HeroesComponent.prototype.delete = function (hero) {
+        var _this = this;
+        this.heroService
+            .delete(hero.id)
+            .then(function () {
+            console.log('delete hero #' + hero.id);
+            _this.heroes = _this.heroes.filter(function (h) { return h !== hero; });
+        })
+            .catch(function (err) { return console.warn('[add-hero] error deleting hero: ' + err); });
+    };
     return HeroesComponent;
 }());
 HeroesComponent = __decorate([
