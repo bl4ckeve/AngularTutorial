@@ -9,10 +9,10 @@ var core_1 = require("@angular/core");
 var MenuComponent = (function () {
     function MenuComponent() {
         this.links = [
-            {
-                href: '/',
-                label: 'Home'
-            },
+            // {
+            //   href: '/',
+            //   label: 'Home'
+            // },
             {
                 href: '/dashboard',
                 label: 'Hero Dashboard'
@@ -29,7 +29,7 @@ MenuComponent = __decorate([
     core_1.Component({
         selector: 'main-menu',
         styleUrls: ['./menu.component.css'],
-        template: "\n    <ul>\n      <li *ngFor=\"let link of links\">\n        <a routerLink=\"{{link.href}}\" routerLinkActive=\"active\">{{link.label}}</a>\n      </li>\n    </ul>\n  "
+        template: "\n    <ul>\n      <li *ngFor=\"let link of links\">\n        <a routerLink=\"{{link.href}}\"\n           routerLinkActive=\"active\"\n           [routerLinkActiveOptions]=\"{exact: true}\">{{link.label}}</a>\n      </li>\n    </ul>\n  "
     })
 ], MenuComponent);
 exports.MenuComponent = MenuComponent;

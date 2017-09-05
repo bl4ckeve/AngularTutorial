@@ -2,11 +2,13 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'main-menu',
-  styleUrls: [ './menu.component.css' ],
+  styleUrls: ['./menu.component.css'],
   template: `
     <ul>
       <li *ngFor="let link of links">
-        <a routerLink="{{link.href}}" routerLinkActive="active">{{link.label}}</a>
+        <a routerLink="{{link.href}}"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}">{{link.label}}</a>
       </li>
     </ul>
   `
@@ -14,10 +16,10 @@ import {Component} from '@angular/core';
 
 export class MenuComponent {
   links = [
-    {
-      href: '/',
-      label: 'Home'
-    },
+    // {
+    //   href: '/',
+    //   label: 'Home'
+    // },
     {
       href: '/dashboard',
       label: 'Hero Dashboard'
