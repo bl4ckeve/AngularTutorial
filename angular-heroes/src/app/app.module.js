@@ -19,6 +19,7 @@ var hero_service_1 = require("./hero.service");
 var menu_component_1 = require("./menu.component");
 var dashboard_component_1 = require("./dashboard.component");
 var app_routing_module_1 = require("./app-routing.module");
+var add_hero_component_1 = require("./add-hero.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,7 +39,8 @@ AppModule = __decorate([
             menu_component_1.MenuComponent,
             dashboard_component_1.DashboardComponent,
             heroes_component_1.HeroesComponent,
-            hero_detail_component_1.HeroDetailComponent
+            hero_detail_component_1.HeroDetailComponent,
+            add_hero_component_1.AddHeroComponent
         ],
         providers: [hero_service_1.HeroService],
         bootstrap: [app_component_1.AppComponent]

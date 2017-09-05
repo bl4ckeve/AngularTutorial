@@ -14,6 +14,7 @@ import {HeroService} from './hero.service';
 import {MenuComponent} from './menu.component';
 import {DashboardComponent} from './dashboard.component';
 import {AppRoutingModule} from './app-routing.module';
+import {AddHeroComponent} from './add-hero.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import {AppRoutingModule} from './app-routing.module';
     MenuComponent,
     DashboardComponent,
     HeroesComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    AddHeroComponent
   ],
   providers: [ HeroService ],
   bootstrap: [ AppComponent ]

@@ -28,5 +28,9 @@ export class MenuComponent {
       href: '/heroes',
       label: 'List Heroes'
     },
+    {
+      href: '/heroes/add',
+      label: 'Add Hero'
+    },
   ];
 }

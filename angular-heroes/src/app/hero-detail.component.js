@@ -31,6 +31,12 @@ var HeroDetailComponent = (function () {
     HeroDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
+    HeroDetailComponent.prototype.save = function () {
+        var _this = this;
+        this.heroService.update(this.hero)
+            .then(function () { return _this.goBack(); })
+            .catch(function (err) { return console.warn('[hero-detail] error saving hero: ' + err); });
+    };
     return HeroDetailComponent;
 }());
 __decorate([

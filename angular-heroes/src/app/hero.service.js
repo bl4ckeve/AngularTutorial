@@ -16,12 +16,18 @@ var HeroService = (function () {
     function HeroService(http) {
         this.http = http;
         this.heroesUrl = 'api/heroes';
+        this.jsonHeaders = new http_1.Headers({ 'Content-Type': 'application/json' });
         this.heroes = [];
         (_a = this.heroes).push.apply(_a, mock_heroes_1.HEROES);
         var _a;
     }
+    HeroService.prototype.handleError = function (error) {
+        console.error('[hero-service] ', error);
+        return Promise.reject(error.message || error);
+    };
     HeroService.prototype.getHeroes = function () {
-        return this.http.get(this.heroesUrl)
+        return this.http
+            .get(this.heroesUrl)
             .toPromise()
             .then(function (response) {
             console.log(response);
@@ -31,7 +37,8 @@ var HeroService = (function () {
     };
     HeroService.prototype.getHero = function (id) {
         var url = this.heroesUrl + "/" + id;
-        return this.http.get(url)
+        return this.http
+            .get(url)
             .toPromise()
             .then(function (response) {
             console.log(response);
@@ -39,9 +46,20 @@ var HeroService = (function () {
         })
             .catch(this.handleError);
     };
-    HeroService.prototype.handleError = function (error) {
-        console.error('[hero-service] ', error);
-        return Promise.reject(error.message || error);
+    HeroService.prototype.update = function (hero) {
+        var url = this.heroesUrl + "/" + hero.id;
+        return this.http
+            .put(url, JSON.stringify(hero), { headers: this.jsonHeaders })
+            .toPromise()
+            .then(function () { return hero; })
+            .catch(this.handleError);
+    };
+    HeroService.prototype.create = function (name) {
+        return this.http
+            .post(this.heroesUrl, JSON.stringify({ name: name }), { headers: this.jsonHeaders })
+            .toPromise()
+            .then(function (result) { return result.json().data; })
+            .catch(this.handleError);
     };
     return HeroService;
 }());
