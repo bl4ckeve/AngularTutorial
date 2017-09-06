@@ -6,6 +6,7 @@ import {Component} from '@angular/core';
   template: `
     <h1>{{title}}</h1>
     <main-menu></main-menu>
+    <hero-search></hero-search>
     <router-outlet></router-outlet>
   `,
 })
