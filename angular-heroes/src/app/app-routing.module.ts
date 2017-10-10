@@ -13,13 +13,12 @@ const routes: Routes = [
     component: HeroesComponent
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent
+    path: 'heroes/:id',
+    component: HeroesComponent
   },
   {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full'
+    path: 'dashboard',
+    component: DashboardComponent
   },
   {
     path: 'heroes/detail/:id',
@@ -28,6 +27,11 @@ const routes: Routes = [
   {
     path: 'heroes/add',
     component: AddHeroComponent
+  },
+  {
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
   }
 ];
 
