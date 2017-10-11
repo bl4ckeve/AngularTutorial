@@ -23,7 +23,24 @@ export class HeroesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.initHeroesList();
+  }
+
+  private initHeroesList(): void {
+    this.heroService.getHeroes().then((d) => {
+      this.heroes = d;
+      this.checkForHeroParam();
+    });
+  }
+
+  private checkForHeroParam() {
+    this.route.params
+      .subscribe(
+        (p: Params) => {
+          this.selectHeroById(+p['id']);
+        }
+      )
+    ;
   }
 
   private selectHeroById(id: number) {
@@ -31,19 +48,6 @@ export class HeroesComponent implements OnInit {
       this.selectedHero = this.heroes.find(
         (h) => h.id === id);
     }
-  }
-
-  getHeroes(): void {
-    this.heroService.getHeroes().then((d) => {
-      this.heroes = d;
-      this.route.params
-        .subscribe(
-          (p: Params) => {
-            this.selectHeroById(+p['id']);
-          }
-        )
-      ;
-    });
   }
 
   onSelect(hero: Hero): void {
